@@ -165,11 +165,13 @@ function stringToUint8Array(str) {
 }
 plainData = decodeHttpResponseData(data)
 plainJson = JSON.parse(plainData);
-if (plainJson && plainJson.mediaInfo) {
-  if(typeof plainJson.mediaInfo.isBuy !== 'undefined'){
-    plainJson.mediaInfo.isBuy = true;
+if (plainJson) {
+  if(plainJson.mediaInfo){
+    if(typeof plainJson.mediaInfo.isBuy !== 'undefined'){
+      plainJson.mediaInfo.isBuy = true;
+    }
   }
-  if(typeof plainJson.mediaInfo.watchCount !== 'undefined'){
+  if(typeof plainJson.watchCount !== 'undefined'){
     plainJson.mediaInfo.watchCount = 100;
   }
 }
