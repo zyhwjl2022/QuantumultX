@@ -165,7 +165,7 @@ if(plainJson&&plainJson.mediaInfo&&plainJson.mediaInfo.isBuy){
   plainJson.mediaInfo.isBuy=true;
 }
 result = decode(JSON.stringify(plainJson))
-console.log(plainJson)
+console.log(JSON.stringify(plainJson))
 
 
 $done(result)
