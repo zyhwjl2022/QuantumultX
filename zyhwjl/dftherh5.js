@@ -16,5 +16,6 @@ const $ = new Env("dftherh5解密");
   session.body = $request.body;
   session.headers = $request.headers;
   $.log(JSON.stringify(session));
-
-}
+})()
+  .catch((e) => $.logErr(e))
+  .finally(() => $.done());
