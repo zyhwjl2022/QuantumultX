@@ -45,11 +45,10 @@ let iv = null;
 function decodeHttpResponseData(cipher) {
   // cipher Base64解码
   const cipherBytes = Array.from(base64js.toByteArray(cipher));
+  console.log("原数据："+cipher.substring(0,40))
   const nonce = cipherBytes.splice(0, nonceLength);
   a=base64js.fromByteArray(cipherBytes);
-  console.log("!!!!!!!!!!!!!!!!!!!!!")
-  console.log(a.substring(0,20))
-  console.log("!!!!!!!!!!!!!!!!!!!!!")
+  console.log("真实数据："+a.substring(0,40))
   const enCodeKey = encodeUtf8(key);
   // 组装largeShaRaw数组计算KEY
   const largeShaRaw = [...enCodeKey, ...nonce];
@@ -170,7 +169,7 @@ if(plainJson&&plainJson.mediaInfo&&plainJson.mediaInfo.isBuy){
 result = decode(JSON.stringify(plainJson))
 //console.log(JSON.stringify(plainJson))
 console.log("==========")
-console.log(result.substring(0,20))
+console.log("处理数据："+result.substring(0,40))
 
 
 $done(result)
