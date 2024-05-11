@@ -170,8 +170,9 @@ plainJson = JSON.parse(plainData);
 // }
 result = decode(JSON.stringify(plainJson))
 //console.log(JSON.stringify(plainJson))
+jsonData.data=result
 console.log("==========")
 console.log("处理数据："+result.substring(0,40))
 
 
-$done(result)
+$done(JSON.stringify(jsonData))
