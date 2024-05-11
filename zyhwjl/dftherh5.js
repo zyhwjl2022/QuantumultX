@@ -2,10 +2,10 @@
 脚本功能: dftherh5解密
 
 [rewrite local]
-^https:\/\/dftherh5.hcjvdum.com\/api\/app\/ping\/config url script-request-header https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dftherh5.js
+^https:\/\/(dftherh5.hcjvdum.com|ljevnf.ncibi1x.cc)\/api\/app\/ping\/config url script-request-header https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dftherh5.js
 
 [MITM]
-hostname = dftherh5.hcjvdum.com
+hostname = dftherh5.hcjvdum.com ljevnf.ncibi1x.cc
 
 */
 // config
