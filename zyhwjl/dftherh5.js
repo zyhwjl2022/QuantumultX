@@ -166,6 +166,21 @@ function stringToUint8Array(str) {
 plainData = decodeHttpResponseData(data)
 plainJson = JSON.parse(plainData);
 if (plainJson) {
+  // 去广告
+  if(plainJson.advertise){
+    delete plainJson.advertise
+  }
+  if(plainJson.postCategory){
+    delete plainJson.postCategory
+  }
+  if(plainJson.postSection){
+    delete plainJson.postSection
+  }
+  if(plainJson.statConfigApp){
+    delete plainJson.statConfigApp
+  }
+  // 去广告  
+  
   if(plainJson.mediaInfo){
     if(typeof plainJson.mediaInfo.isBuy !== 'undefined'){
       plainJson.mediaInfo.isBuy = true;
