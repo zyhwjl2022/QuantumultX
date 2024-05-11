@@ -165,8 +165,13 @@ function stringToUint8Array(str) {
 }
 plainData = decodeHttpResponseData(data)
 plainJson = JSON.parse(plainData);
-if (plainJson && plainJson.mediaInfo && typeof plainJson.mediaInfo.isBuy !== 'undefined') {
+if (plainJson && plainJson.mediaInfo) {
+  if(typeof plainJson.mediaInfo.isBuy !== 'undefined'){
     plainJson.mediaInfo.isBuy = true;
+  }
+  if(typeof plainJson.mediaInfo.watchCount !== 'undefined'){
+    plainJson.mediaInfo.watchCount = 100;
+  }
 }
 result = decode(JSON.stringify(plainJson))
 //console.log(JSON.stringify(plainJson))
