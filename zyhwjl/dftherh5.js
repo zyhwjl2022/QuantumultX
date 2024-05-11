@@ -161,7 +161,9 @@ function stringToUint8Array(str) {
 }
 plainData = decodeHttpResponseData(data)
 plainJson = JSON.parse(plainData);
-plainJson.mediaInfo.isBuy=true;
+if(plainJson&&plainJson.mediaInfo&&plainJson.mediaInfo.isBuy){
+  plainJson.mediaInfo.isBuy=true;
+}
 result = decode(JSON.stringify(plainJson))
 console.log(plainJson)
 
