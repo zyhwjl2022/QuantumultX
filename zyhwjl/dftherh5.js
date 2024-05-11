@@ -47,6 +47,9 @@ function decodeHttpResponseData(cipher) {
   const cipherBytes = Array.from(base64js.toByteArray(cipher));
   const nonce = cipherBytes.splice(0, nonceLength);
   a=base64js.fromByteArray(cipherBytes);
+  console.log("!!!!!!!!!!!!!!!!!!!!!")
+  console.log(a)
+  console.log("!!!!!!!!!!!!!!!!!!!!!")
   const enCodeKey = encodeUtf8(key);
   // 组装largeShaRaw数组计算KEY
   const largeShaRaw = [...enCodeKey, ...nonce];
