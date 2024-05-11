@@ -15,7 +15,22 @@ let body = $response.body
 var jsonData = JSON.parse(body);
 var data = jsonData.data
 
-const CryptoJS = require('crypto-js')
+//const CryptoJS = require('crypto-js')
+const url = 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js';
+
+const CryptoJS = fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text();
+  })
+  .then(script => {
+    return script
+  })
+  .catch(error => console.error('There was a problem with the fetch operation:', error));
+
+
 const { toByteArray, fromByteArray } = require('base64-js')
 
 function decodeHttpResponseData(cipher) {
