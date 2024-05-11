@@ -174,6 +174,9 @@ if (plainJson) {
   if(typeof plainJson.watchCount !== 'undefined'){
     plainJson.mediaInfo.watchCount = 100;
   }
+  if(typeof plainJson.videoType !== 'undefined'){
+    plainJson.mediaInfo.videoType = 0;
+  }
 }
 result = decode(JSON.stringify(plainJson))
 //console.log(JSON.stringify(plainJson))
