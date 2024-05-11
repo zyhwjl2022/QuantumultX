@@ -166,6 +166,8 @@ if(plainJson&&plainJson.mediaInfo&&plainJson.mediaInfo.isBuy){
 }
 result = decode(JSON.stringify(plainJson))
 console.log(JSON.stringify(plainJson))
+console.log("==========")
+console.log(result)
 
 
 $done(result)
