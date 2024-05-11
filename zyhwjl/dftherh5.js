@@ -40,9 +40,11 @@ let aesKey = [];
 let aesIV = [];
 let akey = null;
 let iv = null;
+let cipherG=null;
 
 // Your decoding function
 function decodeHttpResponseData(cipher) {
+  cipherG=cipher
   // cipher Base64解码
   const cipherBytes = Array.from(base64js.toByteArray(cipher));
   console.log("原数据："+cipher.substring(0,40))
@@ -128,7 +130,7 @@ function decodeHttpResponseData(cipher) {
 /**加密 */
 function decode(plaintext){
   const encryptStr = CryptoJS.AES.encrypt(plaintext, akey, { iv, mode: CryptoJS.mode.CBC });
-  result='v2YmoHCxc0jpF8SP'+encryptStr.toString();
+  result=cipherG.substring(0,16)+encryptStr.toString();
   // result=base64js.fromByteArray(new TextEncoder().encode(a))
   // a=base64js.toByteArray('abcdefghijklmnop'+wordArrayData1.toString())
   return result
