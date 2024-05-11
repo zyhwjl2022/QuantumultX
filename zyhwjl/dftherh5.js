@@ -16,6 +16,7 @@ var jsonData = JSON.parse(body);
 var data = jsonData.data
 
 //const CryptoJS = require('crypto-js')
+//const { toByteArray, fromByteArray } = require('base64-js')
 const url = 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js';
 
 const CryptoJS = fetch(url)
@@ -29,9 +30,19 @@ const CryptoJS = fetch(url)
     return script
   })
   .catch(error => console.error('There was a problem with the fetch operation:', error));
+const burl = 'https://unpkg.com/base64-js@1.5.1/index.js';
 
-
-const { toByteArray, fromByteArray } = require('base64-js')
+const { toByteArray, fromByteArray } = fetch(burl)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text();
+  })
+  .then(script => {
+    return script
+  })
+  .catch(error => console.error('There was a problem with the fetch operation:', error));
 
 function decodeHttpResponseData(cipher) {
   const key = 'vEukA&w15z4VAD3kAY#fkL#rBnU!WDhN' //  rTukA&w1578VAD3#AY3fkL#rBnU^DDuO 之前的
