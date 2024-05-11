@@ -48,7 +48,7 @@ function decodeHttpResponseData(cipher) {
   const nonce = cipherBytes.splice(0, nonceLength);
   a=base64js.fromByteArray(cipherBytes);
   console.log("!!!!!!!!!!!!!!!!!!!!!")
-  console.log(a)
+  console.log(a.substring(0,20))
   console.log("!!!!!!!!!!!!!!!!!!!!!")
   const enCodeKey = encodeUtf8(key);
   // 组装largeShaRaw数组计算KEY
@@ -168,9 +168,9 @@ if(plainJson&&plainJson.mediaInfo&&plainJson.mediaInfo.isBuy){
   plainJson.mediaInfo.isBuy=true;
 }
 result = decode(JSON.stringify(plainJson))
-console.log(JSON.stringify(plainJson))
+//console.log(JSON.stringify(plainJson))
 console.log("==========")
-console.log(result)
+console.log(result.substring(0,20))
 
 
 $done(result)
