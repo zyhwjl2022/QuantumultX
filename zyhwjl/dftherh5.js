@@ -175,7 +175,13 @@ if (plainJson) {
     }
   }
   if(typeof plainJson.watchCount !== 'undefined'){
-    plainJson.mediaInfo.watchCount = 100;
+    plainJson.watchCount = 100;
+  }
+  if(typeof plainJson.playable !== 'undefined'){
+    plainJson.playable = true;
+  }
+  if(typeof plainJson.code !== 'undefined'){
+    plainJson.code = 200;
   }
 
 }
