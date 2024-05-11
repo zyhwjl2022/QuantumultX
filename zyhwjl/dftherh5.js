@@ -34,14 +34,19 @@ function loadScript(url) {
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js');
 // Load base64-js library
 loadScript('https://cdn.jsdelivr.net/npm/base64-js@1.5.1/base64js.min.js');
+let key = 'vEukA&w15z4VAD3kAY#fkL#rBnU!WDhN'; //  rTukA&w1578VAD3#AY3fkL#rBnU^DDuO 之前的
+let nonceLength = 12;
+let aesKey = [];
+let aesIV = [];
+let akey = null;
+let iv = null;
 
 // Your decoding function
 function decodeHttpResponseData(cipher) {
-  const key = 'vEukA&w15z4VAD3kAY#fkL#rBnU!WDhN'; //  rTukA&w1578VAD3#AY3fkL#rBnU^DDuO 之前的
-  const nonceLength = 12;
   // cipher Base64解码
   const cipherBytes = Array.from(base64js.toByteArray(cipher));
   const nonce = cipherBytes.splice(0, nonceLength);
+  a=base64js.fromByteArray(cipherBytes);
   const enCodeKey = encodeUtf8(key);
   // 组装largeShaRaw数组计算KEY
   const largeShaRaw = [...enCodeKey, ...nonce];
@@ -61,13 +66,13 @@ function decodeHttpResponseData(cipher) {
   const base64Sha256b = CryptoJS.enc.Base64.parse(sha256bByteArray);
   const sha256b = Str16ToBytes(CryptoJS.SHA256(base64Sha256b).toString());
   // 计算aesKey
-  const aesKey = [
+  aesKey = [
     ...sha256a.splice(0, 8),
     ...sha256b.splice(8, 16),
     ...sha256a.splice(16, 24)
   ];
   // 计算aesIV
-  const aesIV = [
+  aesIV = [
     ...sha256b.splice(0, 4),
     ...sha256a.splice(4, 8),
     ...sha256b.splice(8, 12)
@@ -75,12 +80,13 @@ function decodeHttpResponseData(cipher) {
   // cipher Data 转字节
   const data = base64js.fromByteArray(cipherBytes);
   // aesKey 转字节 后Base64解码
-  const akey = CryptoJS.enc.Base64.parse(base64js.fromByteArray(aesKey));
+  akey = CryptoJS.enc.Base64.parse(base64js.fromByteArray(aesKey));
   // aesIV 转字节 后Base64解码
-  const iv = CryptoJS.enc.Base64.parse(base64js.fromByteArray(aesIV));
+  iv = CryptoJS.enc.Base64.parse(base64js.fromByteArray(aesIV));
   // AES解码后转utf8字符串
   const wordArrayData = CryptoJS.AES.decrypt(data, akey, { iv, mode: CryptoJS.mode.CBC });
-  return wordArrayData.toString(CryptoJS.enc.Utf8);
+  result = wordArrayData.toString(CryptoJS.enc.Utf8);
+  return result
 
   function Str16ToBytes(str) {
     let pos = 0;
@@ -117,6 +123,15 @@ function decodeHttpResponseData(cipher) {
   }
 }
 
+/**加密 */
+function decode(plaintext){
+  const encryptStr = CryptoJS.AES.encrypt(plaintext, akey, { iv, mode: CryptoJS.mode.CBC });
+  result='v2YmoHCxc0jpF8SP'+encryptStr.toString();
+  // result=base64js.fromByteArray(new TextEncoder().encode(a))
+  // a=base64js.toByteArray('abcdefghijklmnop'+wordArrayData1.toString())
+  return result
+}
+
 
 function parseM3u8(data) {
   // 初始化enkey 值 重写m3u8 enkey 链接不然不能访问
@@ -144,8 +159,11 @@ function stringToUint8Array(str) {
   const tmpUint8Array = new Uint8Array(arr)
   return tmpUint8Array
 }
-data = decodeHttpResponseData(data)
-console.log(data)
-//jsonData.data = data
+plainData = decodeHttpResponseData(data)
+plainJson = JSON.parse(plainData);
+plainJson.mediaInfo.isBuy=true;
+result = decode(JSON.stringify(plainJson))
+console.log(plainJson)
 
-$done(JSON.stringify(jsonData))
+
+$done(result)
