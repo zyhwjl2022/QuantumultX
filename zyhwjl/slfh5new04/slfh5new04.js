@@ -23,7 +23,8 @@ function loadScript(url) {
   eval(script);
 }
 
-loadScript("https://mirror.ghproxy.com/https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/slfh5new04/crypto-js-70940dee.js");
+// Load CryptoJS library
+loadScript('https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js');
 
 const te = CryptoJS;
 
