@@ -3,7 +3,7 @@
   "description": "如有侵权请联系zyhwjl@zyhwjl.cn删除。",
   "task": [
     {
-      "config": "30 8 * * * https://gist.githubusercontent.com/zyhwjl2022/a8e2ad29aebc362f9d52859df60db5fe/raw/aa10c1f88339899db2663be7a4a0c2dbe832b93d/dawanjia.js, tag=大玩家HJ签到, img-url=https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dawanjia/icon/dawanjia.png, enabled=true",
+      "config": "30 8 * * * https://gist.githubusercontent.com/zyhwjl2022/a8e2ad29aebc362f9d52859df60db5fe/raw/e25f3875d5686ba66964b76257bae36450871c6b/dawanjia.js, tag=大玩家HJ签到, img-url=https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dawanjia/icon/dawanjia.png, enabled=true",
       "addons": "https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dawanjia/dawanjia.conf, tag=ZYHWJL 获取token"
     }
   ]
