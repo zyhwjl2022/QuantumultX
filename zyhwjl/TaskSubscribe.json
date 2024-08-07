@@ -1,0 +1,10 @@
+{
+  "name": "ZYHWJL定时任务",
+  "description": "如有侵权请联系zyhwjl@zyhwjl.cn删除。",
+  "task": [
+    {
+      "config": "30 8 * * * https://gist.githubusercontent.com/zyhwjl2022/a8e2ad29aebc362f9d52859df60db5fe/raw/aa10c1f88339899db2663be7a4a0c2dbe832b93d/dawanjia.js, tag=ZYHWJL, img-url=https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dawanjia/icon/dawanjia.jpg, enabled=true",
+      "addons": "https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dawanjia/dawanjia.conf, tag=ZYHWJL 获取token"
+    }
+  ]
+}
