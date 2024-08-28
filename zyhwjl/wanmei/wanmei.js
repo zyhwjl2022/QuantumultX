@@ -151,7 +151,7 @@ function GetCookie() {
             if (userId) {
                 const user = $.userArr.find(user => user.userId === userId);
                 if (user) {
-                    $.log('用户已存在')
+                    $.log('用户已存在'+userId)
                     return;
                 }
                 msg += `新增用户 [${userId}]\n`;
