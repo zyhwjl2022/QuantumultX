@@ -161,6 +161,12 @@ function GetCookie() {
                 $.messages.push(msg.trimEnd()), $.log(msg.trimEnd());
             }
         }
+        if (jsonData && jsonData['Data'] && jsonData['Data']['WechatId'] && jsonData['Data']['PublicOpenID']) {
+            const WechatId = jsonData['Data']['WechatId'];
+            const PublicOpenID = jsonData['Data']['PublicOpenID'];
+            msg += `用户小程序信息： [${WechatId}]&[${WechatId}]\n`;
+            $.messages.push(msg.trimEnd()), $.log(msg.trimEnd());
+        }
     } catch (e) {
         $.log("⛔️ 获取Cookie失败"), $.log(e);
     }
