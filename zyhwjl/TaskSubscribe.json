@@ -11,7 +11,7 @@
       "addons": "https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/wanmei/wanmei.conf, tag=ZYHWJL 玩美世界获取token"
     },
     {
-      "config": "30 8 * * * https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/jparking/jparking_sign.js, tag=捷停车签到, img-url=https://jsst-web.oss-cn-shenzhen.aliyuncs.com/file/pic/20230917181956420534.png, enabled=true",
+      "config": "30 8 * * * https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/jparking/jparking_sign.js, tag=捷停车签到, img-url=https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/jparking/jparking.png, enabled=true",
       "addons": "https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/jparking/jparking_sign.conf, tag=ZYHWJL 捷停车获取token"
     }
   ]
