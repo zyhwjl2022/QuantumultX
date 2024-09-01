@@ -4,11 +4,15 @@
   "task": [
     {
       "config": "30 8 * * * https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dawanjia/dawanjia.js, tag=大玩家HJ签到, img-url=https://mirror.ghproxy.com/https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dawanjia/icon/dawanjia.png, enabled=true",
-      "addons": "https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dawanjia/dawanjia.conf, tag=ZYHWJL 获取token"
+      "addons": "https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/dawanjia/dawanjia.conf, tag=ZYHWJL 大玩家获取token"
     },
     {
       "config": "30 8 * * * https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/wanmei/wanmei.js, tag=玩美世界签到, img-url=https://mirror.ghproxy.com/https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/wanmei/icon/wanmei.png, enabled=true",
-      "addons": "https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/wanmei/wanmei.conf, tag=ZYHWJL 获取token"
+      "addons": "https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/wanmei/wanmei.conf, tag=ZYHWJL 玩美世界获取token"
+    },
+    {
+      "config": "30 8 * * * https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/jparking/jparking_sign.js, tag=捷停车签到, img-url=https://jsst-web.oss-cn-shenzhen.aliyuncs.com/file/pic/20230917181956420534.png, enabled=true",
+      "addons": "https://raw.githubusercontent.com/zyhwjl2022/QuantumultX/master/zyhwjl/jparking/jparking_sign.conf, tag=ZYHWJL 捷停车获取token"
     }
   ]
 }
